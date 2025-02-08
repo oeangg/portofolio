@@ -1,10 +1,11 @@
-import { LinkButton } from "@/components/ui/link";
+import { NavbarMenu } from "@/components/header/navbar-menu";
+import { HeroPage } from "@/components/hero/hero-page";
 
 export default function Home() {
   return (
     <main className="">
-      <h1>Hello Im Subhan</h1>
-      <LinkButton href="/" text="About Me" />
+      <NavbarMenu />
+      <HeroPage />
     </main>
   );
 }
