@@ -7,10 +7,9 @@ import {
   FaHouseUser,
   FaFolderOpen,
   FaBookReader,
-  FaAddressBook,
   FaUser,
 } from "react-icons/fa";
-
+import { MdOutlineEmail } from "react-icons/md";
 import { LinkMenu } from "./link-menu";
 
 export const ListMenu = () => {
@@ -35,7 +34,7 @@ export const ListMenu = () => {
       </li>
       <li className={pathname === "/contact" ? "text-secondary" : ""}>
         <LinkMenu href="/contact">
-          <FaAddressBook size={15} />
+          <MdOutlineEmail size={16} />
           Contact
         </LinkMenu>
       </li>

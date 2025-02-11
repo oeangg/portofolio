@@ -2,6 +2,7 @@ import React from "react";
 import { FaFolderOpen } from "react-icons/fa";
 import { SubTitle } from "@/components/ui/sub-title";
 import Link from "next/link";
+
 import { SiTailwindcss, SiPrisma } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
@@ -28,7 +29,7 @@ export const ProjectSection = () => {
           className="w-full basis-1/3 rounded-lg p-2 shadow-sm shadow-foreground"
         ></iframe>
         <div className="basis-2/3 space-y-5">
-          <h3 className="bg-gradient-to-r from-secondary to-foreground bg-clip-text text-3xl font-extrabold tracking-tight text-transparent">
+          <h3 className="bg-gradient-to-r from-secondary to-foreground bg-clip-text text-3xl font-semibold tracking-tight text-transparent">
             SiContact App
           </h3>
           <p>

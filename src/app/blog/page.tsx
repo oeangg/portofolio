@@ -1,5 +1,13 @@
+import { PageTitle } from "@/components/ui/page-title";
 import React from "react";
 
 export default function Home() {
-  return <div>blog page</div>;
+  return (
+    <div>
+      <PageTitle
+        title="Blog"
+        text="contains about technology and travel, enjoy!"
+      />
+    </div>
+  );
 }

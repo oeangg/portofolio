@@ -4,7 +4,7 @@ import { SubTitle } from "@/components/ui/sub-title";
 
 export const LearnSection = () => {
   return (
-    <div className="mb-40">
+    <div className="">
       <SubTitle
         title="Currently Learning"
         text="Currently improving my tech skills"

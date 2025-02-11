@@ -9,7 +9,7 @@ import { LinkSosmed } from "./link-sosmed";
 
 export const HeroSection = () => {
   return (
-    <div className="flex h-svh w-full flex-col justify-start gap-5">
+    <div className="flex h-svh w-full flex-col justify-start">
       <SubTitle title="Intro">
         <CiHome size={17} />
       </SubTitle>
