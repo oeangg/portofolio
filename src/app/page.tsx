@@ -1,11 +1,17 @@
-import { NavbarMenu } from "@/components/header/navbar-menu";
-import { HeroPage } from "@/components/hero/hero-page";
+import { HeroSection } from "@/components/homepage/hero/hero-index";
+import { LearnSection } from "@/components/homepage/learning/learn-index";
+import { ProjectSection } from "@/components/homepage/project/project-index";
+import { TechStackSection } from "@/components/homepage/tech/tech-index";
 
 export default function Home() {
   return (
-    <main className="">
-      <NavbarMenu />
-      <HeroPage />
-    </main>
+    <section>
+      <HeroSection />
+      <main className="flex flex-col gap-32">
+        <TechStackSection />
+        <ProjectSection />
+        <LearnSection />
+      </main>
+    </section>
   );
 }

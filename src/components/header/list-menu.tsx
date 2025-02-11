@@ -1,35 +1,47 @@
-import React from "react";
+"use client";
 
-import { BookOpen, ContactRound, FileCode2, House, User } from "lucide-react";
+import React from "react";
+import { usePathname } from "next/navigation";
+
+import {
+  FaHouseUser,
+  FaFolderOpen,
+  FaBookReader,
+  FaAddressBook,
+  FaUser,
+} from "react-icons/fa";
+
 import { LinkMenu } from "./link-menu";
 
 export const ListMenu = () => {
+  const pathname = usePathname();
+
   return (
-    <ul className="flex flex-row gap-10 rounded-2xl bg-transparent px-6 py-4 shadow-sm shadow-foreground">
-      <li>
+    <ul className="hidden flex-row gap-10 bg-transparent px-6 py-4 lg:flex">
+      <li className={pathname === "/" ? "text-secondary" : ""}>
         <LinkMenu href="/">
-          <House size={16} /> Home
+          <FaHouseUser size={15} /> Home
         </LinkMenu>
       </li>
-      <li>
-        <LinkMenu href="/project">
-          <FileCode2 size={16} /> Project
+      <li className={pathname === "/projects" ? "text-secondary" : ""}>
+        <LinkMenu href="/projects">
+          <FaFolderOpen size={15} /> Projects
         </LinkMenu>
       </li>
-      <li>
+      <li className={pathname === "/blog" ? "text-secondary" : ""}>
         <LinkMenu href="/blog">
-          <BookOpen size={16} /> Blog
+          <FaBookReader size={15} /> Blog
         </LinkMenu>
       </li>
-      <li>
+      <li className={pathname === "/contact" ? "text-secondary" : ""}>
         <LinkMenu href="/contact">
-          <ContactRound size={16} />
+          <FaAddressBook size={15} />
           Contact
         </LinkMenu>
       </li>
-      <li>
+      <li className={pathname === "/about" ? "text-secondary" : ""}>
         <LinkMenu href="/about">
-          <User size={16} />
+          <FaUser size={15} />
           About
         </LinkMenu>
       </li>

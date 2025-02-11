@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+// import { Noto_Sans } from "next/font/google";
+import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
+import { HeaderMenu } from "@/components/header/header-index";
+import { Footer } from "@/components/footer/footer-index";
 
-const notoSans = Noto_Sans({
+const robotoslab = Roboto_Slab({
   variable: "--font-noto-sans",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -20,8 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSans.className}>
-        <section className="mx-auto w-full max-w-5xl">{children}</section>
+      <body className={robotoslab.className}>
+        <section className="mx-auto flex w-full max-w-5xl flex-col justify-center px-10 pt-10 sm:px-7 md:px-4 lg:px-0 lg:pt-40">
+          <HeaderMenu />
+          {children}
+          <Footer />
+        </section>
       </body>
     </html>
   );
