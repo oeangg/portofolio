@@ -1,24 +1,27 @@
 import React from "react";
-import { FaFolderOpen } from "react-icons/fa";
+
 import { SubTitle } from "@/components/ui/sub-title";
 import Link from "next/link";
-
-import { SiTailwindcss, SiPrisma } from "react-icons/si";
-import { RiNextjsFill } from "react-icons/ri";
-import { FaGithub } from "react-icons/fa";
-import { FiChrome } from "react-icons/fi";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { projectItems } from "@/data/project.item";
+import { CardProject } from "@/components/ui/card";
 
 export const ProjectSection = () => {
+  const projects = projectItems.filter(
+    (x) => x.titleVideo === "Website Sekolah",
+  );
+
   return (
     <div className="flex flex-col gap-10">
       <SubTitle
-        title="My Projects"
+        title="Projects"
         text="Following are the projects I have worked on"
-      >
-        <FaFolderOpen size={17} />
-      </SubTitle>
-      <div className="flex flex-col items-center justify-between gap-5 md:flex-row lg:gap-10">
+        mb="lg"
+      />
+      {projects.map((pro, index) => (
+        <CardProject key={index} {...pro} techIcon={pro.tech.map((x) => x)} />
+      ))}
+      {/* <div className="flex flex-col items-center justify-between gap-5 md:flex-row lg:gap-10">
         <iframe
           height="200"
           src="https://www.youtube.com/embed/Yjq-pF5bfYI?si=WFVM9Whp3Kt2z15Y"
@@ -63,7 +66,7 @@ export const ProjectSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <Link
         href="/projects"
         className="flex items-center justify-center gap-1 text-sm font-light tracking-tight text-secondary duration-300 hover:underline"

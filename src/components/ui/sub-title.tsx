@@ -1,21 +1,33 @@
+import { cn } from "@/utils/cn";
 import React from "react";
 
-interface ITitle {
+interface ISubTitle {
   title: string;
   text?: string;
-  children: React.ReactNode;
+  mb: "lg" | "sm";
 }
 
-export const SubTitle = ({ text, title, children }: ITitle) => {
+export const SubTitle = ({ text, title, mb }: ISubTitle) => {
   return (
-    <div className="mb-5 flex flex-col justify-start gap-0 text-base font-semibold text-secondary md:mb-8 md:text-lg lg:mb-20">
-      <div className="flex w-full flex-row items-center justify-start gap-1">
-        {children}
-        <span className="text-secondary">{title}</span>
+    <div
+      className={cn(
+        "mb-5 flex flex-col justify-start gap-2 text-lg font-medium text-secondary md:text-lg",
+        mb === "lg" ? "md:mb-8 lg:mb-20" : "md:mb-8",
+      )}
+    >
+      <div className="flex flex-col justify-start gap-2">
+        <div className="flex items-center justify-start gap-[3px]">
+          <span className="inline-block h-4 w-4 rounded-full bg-primary"></span>
+          <span className="inline-block h-4 w-4 rounded-full bg-secondary"></span>
+          <span className="inline-block h-4 w-4 rounded-full bg-foreground"></span>
+        </div>
       </div>
-      <span className="text-sm font-normal tracking-wider text-foreground">
-        {text}
-      </span>
+      <div className="-space-y-1">
+        <span className="block text-third">{title}.tsx</span>
+        <span className="block text-sm font-light tracking-wide text-foreground">
+          {text}
+        </span>
+      </div>
     </div>
   );
 };

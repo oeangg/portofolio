@@ -4,7 +4,7 @@ import imgProfil from "../../../assets/images/sbn.jpg";
 
 export const HeroImage = () => {
   return (
-    <div className="group relative flex h-56 w-56 items-center justify-center overflow-hidden rounded-2xl border border-foreground grayscale duration-300 hover:shadow-md hover:shadow-third hover:grayscale-0 lg:h-full lg:w-full lg:basis-1/3">
+    <div className="group relative flex h-56 w-56 items-center justify-center overflow-hidden rounded-2xl border border-foreground grayscale duration-300 hover:shadow-md hover:shadow-third hover:grayscale-0 lg:h-3/4 lg:w-full lg:max-w-64">
       <Image
         src={imgProfil}
         fill

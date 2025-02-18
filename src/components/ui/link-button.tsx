@@ -1,14 +1,16 @@
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import React from "react";
+import { IconType } from "react-icons";
 
-interface ILink {
+interface ILinkButton {
   href: string;
-  children: React.ReactNode;
+  text: string;
+  Icon: IconType;
   theme: "bg" | "border";
 }
 
-export const LinkButton = ({ href, children, theme }: ILink) => {
+export const LinkButton = ({ href, text, Icon, theme }: ILinkButton) => {
   return (
     <Link
       href={href}
@@ -19,7 +21,7 @@ export const LinkButton = ({ href, children, theme }: ILink) => {
           : "border border-primary bg-transparent text-primary hover:text-third hover:shadow-md hover:shadow-third",
       )}
     >
-      {children}
+      {text} <Icon size={20} className="duration-300 group-hover:scale-125" />
     </Link>
   );
 };

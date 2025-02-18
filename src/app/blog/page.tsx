@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <PageTitle
         title="Blog"
-        text="contains about technology and travel, enjoy!"
+        text="contains about technology and travel, hopely you enjoy!"
       />
     </div>
   );

@@ -1,5 +1,3 @@
-import { CiHome } from "react-icons/ci";
-
 import React from "react";
 import { HeroImage } from "./hero-image";
 
@@ -10,14 +8,12 @@ import { LinkSosmed } from "./link-sosmed";
 export const HeroSection = () => {
   return (
     <div className="flex h-svh w-full flex-col justify-start">
-      <SubTitle title="Intro">
-        <CiHome size={17} />
-      </SubTitle>
+      <SubTitle title="Intro" mb="lg" />
       <div className="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row lg:gap-24">
         <div className="w-full basis-3/4 space-y-12">
           <h1>
-            Hello{" "}
-            <span className="font-black tracking-wide text-primary underline decoration-dotted">
+            Hello!{" "}
+            <span className="font-extrabold text-primary underline decoration-dotted">
               I&apos;m Subhan
             </span>{" "}
           </h1>
