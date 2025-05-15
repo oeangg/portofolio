@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
-
+export const runtime = "edge";
+git;
 export async function GET() {
   const buffer = await readFile(
     path.join(process.cwd(), "src/assets/CV_subhan.pdf"),
