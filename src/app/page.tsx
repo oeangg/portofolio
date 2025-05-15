@@ -1,17 +1,15 @@
-import { HeroSection } from "@/components/homepage/hero/hero-index";
-import { LearnSection } from "@/components/homepage/learning/learn-index";
-import { ProjectSection } from "@/components/homepage/project/project-index";
-import { TechStackSection } from "@/components/homepage/tech/tech-index";
+import { AboutSection } from "../components/about/about";
+import { IntroSection } from "../components/homepage/hero/hero-index";
+import { ProjectSection } from "../components/homepage/project/project-index";
+import { TechStackSection } from "../components/homepage/skills/skill-index";
 
 export default function Home() {
   return (
-    <section>
-      <HeroSection />
-      <main className="flex flex-col gap-32">
-        <TechStackSection />
-        <ProjectSection />
-        <LearnSection />
-      </main>
-    </section>
+    <main className="flex flex-col gap-16">
+      <IntroSection />
+      <AboutSection />
+      <TechStackSection />
+      <ProjectSection />
+    </main>
   );
 }

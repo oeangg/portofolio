@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
 // import { Noto_Sans } from "next/font/google";
 // import { Roboto_Slab } from "next/font/google";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { HeaderMenu } from "@/components/header/header-index";
-import { Footer } from "@/components/footer/footer-index";
+import { TooltipProvider } from "../components/ui/tooltip";
+import { NavbarMenu } from "../components/navbar/header-index";
+import { RetroGrid } from "../components/magicui/retro-grid";
 
-const atkinson_Hyperlegible = Atkinson_Hyperlegible({
-  variable: "--font-noto-sans",
+const fontSans = FontSans({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  variable: "--font-sans",
 });
-// const robotoslab = Roboto_Slab({
-//   variable: "--font-noto-sans",
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-// });
 
 export const metadata: Metadata = {
   title: "Subhan Mohammad",
@@ -29,11 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={atkinson_Hyperlegible.className}>
-        <section className="mx-auto flex w-full max-w-5xl flex-col justify-center px-10 pt-10 sm:px-7 md:px-4 lg:px-0 lg:pt-40">
-          <HeaderMenu />
-          {children}
-          <Footer />
+      <body className={fontSans.className}>
+        <section className="relative h-screen w-full">
+          <RetroGrid opacity={0.3} />
+          <div className="mx-auto flex w-full max-w-3xl flex-col justify-center px-10 pt-5 sm:px-7 md:px-4 lg:px-0 lg:pt-20">
+            <TooltipProvider delayDuration={0}>
+              {children}
+              <NavbarMenu />
+            </TooltipProvider>
+          </div>
         </section>
       </body>
     </html>

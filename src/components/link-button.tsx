@@ -1,0 +1,27 @@
+import { cn } from "../utils/cn";
+import Link from "next/link";
+import React from "react";
+import { IconType } from "react-icons";
+
+interface ILinkButton {
+  href: string;
+  text: string;
+  Icon: IconType;
+  theme: "bg" | "border";
+}
+
+export const LinkButton = ({ href, text, Icon, theme }: ILinkButton) => {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "group flex h-8 w-fit transform items-center justify-center gap-1 rounded-full px-3 text-xs font-light transition-colors duration-300 hover:border-transparent",
+        theme === "bg"
+          ? "bg-primary text-background hover:bg-secondary hover:text-primary hover:shadow-lg hover:shadow-popover-foreground"
+          : "h border border-primary bg-transparent text-primary hover:bg-primary hover:text-background hover:shadow-lg hover:shadow-popover-foreground",
+      )}
+    >
+      {text} <Icon size={16} className="duration-300 group-hover:scale-125" />
+    </Link>
+  );
+};

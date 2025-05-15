@@ -1,124 +1,144 @@
 "use client";
 
-import React, { FormEvent, useRef, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export const FormContact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+type PropsEnv = {
+  service_id: string;
+  public_key: string;
+  template_id: string;
+};
+
+const contactSchema = z.object({
+  name: z.string().min(4, "name must be minimum 4 character"),
+  email: z
+    .string()
+    .min(8, "email must be minimum 8 character")
+    .email("email not valid"),
+  phone: z
+    .string()
+    .min(10, "phone must be minimum 10 character")
+    .max(14, "phone must be maximal 14 character"),
+  message: z
+    .string()
+    .min(10, "message must be minimun 10 character")
+    .max(50, "message must be maximal 50 character"),
+});
+
+type ContactFormSchema = z.infer<typeof contactSchema>;
+
+export const FormContact = (props: PropsEnv) => {
+  const form = useForm<ContactFormSchema>({
+    resolver: zodResolver(contactSchema),
   });
+  const { formState, handleSubmit, reset, register } = form;
   const [loading, setLoading] = useState(false);
-  const [showNotif, setShowNotif] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const { service_id, public_key, template_id } = props;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const formRef = useRef<any>();
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const sendMail = handleSubmit((field) => {
     setLoading(true);
     emailjs
       .send(
-        "service_sg7oi4g",
-        "template_w1pyifr",
+        service_id,
+        template_id,
         {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
+          name: field.name,
+          email: field.email,
+          phone: field.phone,
+          message: field.message,
         },
         {
-          publicKey: "yLmQnDUXd8t248Wkm",
+          publicKey: public_key,
         },
       )
       .then(
         () => {
           setLoading(false);
-          setShowNotif(true);
-          setTimeout(() => setShowNotif(false), 3000);
-          formRef.current.reset();
+          setSent(true);
+          setTimeout(() => setSent(false), 3000);
+          reset();
         },
         (error) => {
           console.log("FAILED", error);
         },
       );
-  };
+  });
 
   return (
     <form
-      className="relative flex flex-col items-center justify-center gap-8"
-      onSubmit={sendEmail}
-      ref={formRef}
+      className="relative flex flex-col items-center justify-center gap-2 text-xs"
+      onSubmit={sendMail}
     >
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-secondary">
+        <label htmlFor="" className="text-sm font-light text-foreground">
           FULL NAME
         </label>
         <input
           type="text"
-          name="name"
-          placeholder="Your full name"
-          required
+          placeholder="Input your full name"
           autoComplete="off"
-          onChange={(e) => {
-            setFormData({ ...formData, name: e.target.value });
-          }}
+          {...register("name")}
         />
+        {formState.errors.name && (
+          <p className="text-red-500">{formState.errors.name.message}</p>
+        )}
       </div>
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-secondary">
+        <label htmlFor="" className="text-sm font-light text-foreground">
           EMAIL
         </label>
         <input
           type="email"
-          name="email"
-          required
-          placeholder="Your email address"
+          placeholder="Input your email address"
           autoComplete="off"
-          onChange={(e) => {
-            setFormData({ ...formData, email: e.target.value });
-          }}
+          {...register("email")}
         />
+        {formState.errors.email && (
+          <p className="text-red-500">{formState.errors.email.message}</p>
+        )}
       </div>
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-secondary">
+        <label htmlFor="" className="text-sm font-light text-foreground">
           PHONE
         </label>
         <input
           type="tel"
-          name="phone"
-          placeholder="Your phone number"
+          placeholder="Input your phone number"
           autoComplete="off"
-          onChange={(e) => {
-            setFormData({ ...formData, phone: e.target.value });
-          }}
+          {...register("phone")}
         />
+        {formState.errors.phone && (
+          <p className="text-red-500">{formState.errors.phone.message}</p>
+        )}
       </div>
 
-      <div className="mb-4 flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-secondary">
+      <div className="flex w-full flex-col gap-1 md:w-2/3">
+        <label htmlFor="" className="text-sm font-light text-foreground">
           MESSAGE
         </label>
 
         <textarea
-          name="message"
-          required
           placeholder="Write your message..."
           rows={3}
           autoComplete="off"
-          onChange={(e) => {
-            setFormData({ ...formData, message: e.target.value });
-          }}
+          {...register("message")}
         />
+        {formState.errors.message && (
+          <p className="text-red-500">{formState.errors.message.message}</p>
+        )}
       </div>
 
       <button
         type="submit"
-        value="send"
         disabled={loading}
-        className="rounded-xl bg-background px-7 py-3 text-lg font-medium uppercase text-secondary shadow-sm shadow-secondary transition-colors duration-300 hover:border-transparent hover:text-third hover:shadow-md hover:shadow-third disabled:opacity-60"
+        className="rounded-2xl bg-accent-foreground/80 px-4 py-2 text-base font-normal tracking-tight text-secondary shadow-sm shadow-secondary transition-all duration-300 hover:border-transparent hover:bg-accent-foreground hover:shadow-lg hover:shadow-muted-foreground disabled:opacity-60"
       >
         {loading ? (
           <span className="animate-pulse">Sending Message...</span>
@@ -126,9 +146,9 @@ export const FormContact = () => {
           <span>Send Message</span>
         )}
       </button>
-      {showNotif ? (
-        <p className="absolute bottom-16 animate-pulse text-lg text-green-300">
-          Thank You! Your email have been sent!
+      {sent ? (
+        <p className="absolute bottom-16 animate-pulse text-lg text-green-500">
+          Thank You! Your email has been sent!
         </p>
       ) : null}
     </form>

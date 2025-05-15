@@ -1,13 +1,10 @@
-import { PageTitle } from "@/components/ui/page-title";
+import { SubTitle } from "@/src/components/sub-title";
 import React from "react";
 
 export default function Home() {
   return (
     <div>
-      <PageTitle
-        title="Blog"
-        text="contains about technology and travel, hopely you enjoy!"
-      />
+      <SubTitle title="Blog" />
     </div>
   );
 }

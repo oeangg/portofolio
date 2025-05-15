@@ -1,36 +1,32 @@
 import React from "react";
 import { HeroImage } from "./hero-image";
 
-import { LinkCTA } from "./link-cta";
-import { SubTitle } from "@/components/ui/sub-title";
 import { LinkSosmed } from "./link-sosmed";
 
-export const HeroSection = () => {
+export const IntroSection = () => {
   return (
-    <div className="flex h-svh w-full flex-col justify-start">
-      <SubTitle title="Intro" mb="lg" />
-      <div className="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row lg:gap-24">
-        <div className="w-full basis-3/4 space-y-12">
+    <section className="relative flex w-full flex-col justify-start">
+      <div className="flex flex-col-reverse justify-between gap-10 lg:flex-row">
+        <div className="w-full basis-3/4 space-y-5">
           <h1>
-            Hello!{" "}
-            <span className="font-extrabold text-primary underline decoration-dotted">
-              I&apos;m Subhan
+            Greetings!{" "}
+            <span className="font-extrabold text-primary">
+              I&apos;m Subhan 👋
             </span>{" "}
           </h1>
           <div className="space-y-4">
-            <p>
-              My Name is Mohammad Subhan, i started my journey as a web
-              programmer mid 2024. I work with React as a frontend developer and
-              continue to improve my skills to become a fullstack developer
+            <p className="text-xl font-light">
+              a Frontend Developer with a strong focus on React. I&apos;m
+              currently on a journey to deepen my knowledge and expertise to
+              achieve my goal of becoming a Fullstack Developer. Let&apos;s
+              connect on social media:
             </p>
 
             <LinkSosmed />
           </div>
-
-          <LinkCTA />
         </div>
         <HeroImage />
       </div>
-    </div>
+    </section>
   );
 };

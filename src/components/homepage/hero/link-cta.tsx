@@ -1,10 +1,11 @@
 import React from "react";
-import { LinkButton } from "@/components/ui/link-button";
+
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { LinkButton } from "../../link-button";
 
 export const LinkCTA = () => {
   return (
-    <div className="flex flex-row items-center justify-start gap-3 pl-10">
+    <div className="flex flex-row items-center justify-end gap-3">
       <LinkButton
         href="/contact"
         theme="bg"
@@ -12,7 +13,7 @@ export const LinkCTA = () => {
         Icon={MdOutlineArrowOutward}
       />
       <LinkButton
-        href="/about"
+        href="/api/download/resume"
         theme="border"
         text="My Resume"
         Icon={MdOutlineArrowOutward}
