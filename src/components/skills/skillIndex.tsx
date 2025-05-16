@@ -5,9 +5,9 @@ import { TechList } from "./techList";
 
 export const TechStackSection = () => {
   return (
-    <div className="space-y-5">
+    <section className="space-y-5">
       <SubTitle title="Skills" />
       <TechList />
-    </div>
+    </section>
   );
 };

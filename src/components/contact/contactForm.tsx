@@ -77,8 +77,8 @@ export const FormContact = (props: PropsEnv) => {
       onSubmit={sendMail}
     >
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-foreground">
-          FULL NAME
+        <label htmlFor="" className="text-sm font-medium text-foreground">
+          Full Name
         </label>
         <input
           type="text"
@@ -91,8 +91,8 @@ export const FormContact = (props: PropsEnv) => {
         )}
       </div>
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-foreground">
-          EMAIL
+        <label htmlFor="" className="text-sm font-medium text-foreground">
+          Email
         </label>
         <input
           type="email"
@@ -105,8 +105,8 @@ export const FormContact = (props: PropsEnv) => {
         )}
       </div>
       <div className="flex w-full flex-col gap-1 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-foreground">
-          PHONE
+        <label htmlFor="" className="text-sm font-medium text-foreground">
+          Phone Number
         </label>
         <input
           type="tel"
@@ -120,8 +120,8 @@ export const FormContact = (props: PropsEnv) => {
       </div>
 
       <div className="flex w-full flex-col gap-1 pb-2 md:w-2/3">
-        <label htmlFor="" className="text-sm font-light text-foreground">
-          MESSAGE
+        <label htmlFor="" className="text-sm font-medium text-foreground">
+          Message
         </label>
 
         <textarea
@@ -138,7 +138,7 @@ export const FormContact = (props: PropsEnv) => {
       <button
         type="submit"
         disabled={loading}
-        className="flex w-fit transform items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-sm font-light text-background transition-all duration-300 hover:border-transparent hover:bg-primary/85 hover:shadow-lg hover:shadow-popover-foreground"
+        className="flex w-fit transform items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-sm font-normal text-background transition-all duration-300 hover:border-transparent hover:bg-primary/85 hover:shadow-lg hover:shadow-popover-foreground"
       >
         {loading ? (
           <span className="animate-pulse">Sending...</span>

@@ -17,7 +17,7 @@ export const AboutSection = () => {
           <Link
             href="https://www.youtube.com/@sandhikagalihWPU"
             target="_blank"
-            className="font-bold underline decoration-dotted"
+            className="font-bold underline"
           >
             Youtube Web Programming Unpas
           </Link>{" "}
@@ -25,16 +25,16 @@ export const AboutSection = () => {
           <Link
             href="https://www.codepolitan.com/"
             target="_blank"
-            className="font-bold underline decoration-dotted"
+            className="font-bold underline"
           >
             Codepolitan
           </Link>{" "}
           (covering HTML, CSS, Tailwind CSS, and JavaScript), an immersive
           Fullstack JavaScript Bootcamp at{" "}
           <Link
-            href="https://www.devscale.id/"
+            href="https://www.devscale.id/programs/fullstack-javascript-bootcamp"
             target="_blank"
-            className="font-bold underline decoration-dotted"
+            className="font-bold underline"
           >
             Devscale Indonesia
           </Link>{" "}
@@ -42,7 +42,7 @@ export const AboutSection = () => {
           <Link
             href="https://www.dicoding.com/"
             target="_blank"
-            className="font-bold underline decoration-dotted"
+            className="font-bold underline"
           >
             Dicoding Indonesia
           </Link>{" "}
@@ -51,7 +51,7 @@ export const AboutSection = () => {
           <Link
             href="https://wpucourse.id/"
             target="_blank"
-            className="font-bold underline decoration-dotted"
+            className="font-bold underline"
           >
             Wpu Online Course
           </Link>{" "}
@@ -60,7 +60,31 @@ export const AboutSection = () => {
         <p className="text-sm leading-5">
           Additionally, I enjoy video editing and produce content for YouTube,
           Instagram, and TikTok, specializing in travel and gathering videos.
-          Feel free to check out my work on those platforms.
+          Feel free to check out my work on those platforms (
+          <Link
+            href="https://www.instagram.com/oeangg/"
+            target="_blank"
+            className="font-bold underline"
+          >
+            Instagram
+          </Link>
+          ,{" "}
+          <Link
+            href="https://www.tiktok.com/@oeanggggg"
+            target="_blank"
+            className="font-bold underline"
+          >
+            Tiktok
+          </Link>{" "}
+          &{" "}
+          <Link
+            href="https://www.youtube.com/@SubhanMohammad"
+            target="_blank"
+            className="font-bold underline"
+          >
+            Youtube
+          </Link>
+          )
         </p>
       </div>
       <LinkCTA />

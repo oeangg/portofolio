@@ -19,7 +19,7 @@ export const TechItem = ({ text, iconSize, size = "md", Icon }: ITechItem) => {
             "flex flex-col items-center justify-center gap-2 rounded-md bg-transparent p-1 text-xs font-thin text-secondary-foreground/80 shadow-foreground transition-all duration-300 hover:text-foreground",
             size === "md"
               ? "h-12 w-12 hover:scale-105 hover:shadow-xl"
-              : "h-7 w-7",
+              : "h-8 w-8",
           )}
         >
           <Icon size={iconSize} />

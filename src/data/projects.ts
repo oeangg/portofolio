@@ -2,7 +2,7 @@ export const projectItems = [
   {
     linkImage:
       "https://pub-d890061fd4f94f63b27e54a967b3b306.r2.dev/porpofolio.png",
-    titleVideo: "Personal Web Portofolio",
+    titleVideo: "Personal Website",
     description:
       "My Portfolio Website - A showcase of my skills and projects, built with a modern technology stack for optimal performance and a sleek user experience. This website leverages the power of Next.js for server-side rendering and routing, the utility-first CSS framework Tailwind CSS for rapid and responsive styling, TypeScript for enhanced code maintainability, and Shadcn UI for beautifully designed, accessible components. Explore my work and get in touch!",
     tech: ["next", "tailwind"],

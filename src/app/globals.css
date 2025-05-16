@@ -11,17 +11,21 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
 @layer base {
   h1 {
     @apply text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl;
   }
 
   input {
-    @apply border-b border-primary bg-transparent px-5 py-1.5 text-base font-light text-foreground outline-none ring-0 placeholder:text-sm placeholder:font-extralight placeholder:text-secondary-foreground focus:rounded-2xl focus:border;
+    @apply border-b border-primary bg-transparent px-5 py-1.5 text-base font-normal text-foreground outline-none ring-0 placeholder:text-sm placeholder:font-light placeholder:text-secondary-foreground focus:rounded-2xl focus:border;
   }
 
   textarea {
-    @apply border-b border-primary bg-transparent px-5 py-1.5 text-base font-light text-foreground outline-none ring-0 placeholder:text-sm placeholder:font-extralight placeholder:text-secondary-foreground focus:rounded-2xl focus:border;
+    @apply border-b border-primary bg-transparent px-5 py-1.5 text-base font-normal text-foreground outline-none ring-0 placeholder:text-sm placeholder:font-light placeholder:text-secondary-foreground focus:rounded-2xl focus:border;
   }
   :root {
     --background: 0 0% 100%;

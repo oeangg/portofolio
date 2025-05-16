@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { MdOutlineArrowOutward } from "react-icons/md";
@@ -7,9 +9,9 @@ export const LinkCTA = () => {
   return (
     <div className="flex flex-row items-center justify-end gap-3">
       <LinkButton
-        href="/contact"
+        href="#contact"
         theme="bg"
-        text="Work with Me"
+        text="Collaborate with Me"
         Icon={MdOutlineArrowOutward}
       />
       <LinkButton

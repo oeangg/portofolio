@@ -3,9 +3,9 @@ import { SERVICE_ID, PUBLIC_KEY, TEMPLATE_ID } from "@/src/utils/environment";
 
 import React from "react";
 
-export const ContactIndex = () => {
+export const ContactSection = () => {
   return (
-    <div className="w-full space-y-10" id="contact">
+    <section className="w-full space-y-10" id="contact">
       <div className="-space-y-1 text-center">
         <h2 className="text-3xl font-bold">Contact</h2>
         <p className="text-xl font-light tracking-wide">
@@ -17,6 +17,6 @@ export const ContactIndex = () => {
         service_id={SERVICE_ID}
         template_id={TEMPLATE_ID}
       />
-    </div>
+    </section>
   );
 };

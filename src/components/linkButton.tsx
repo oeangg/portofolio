@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "../utils/cn";
 import Link from "next/link";
 import React from "react";
@@ -18,11 +20,25 @@ export const LinkButton = ({
   Icon,
   theme,
 }: ILinkButton) => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (href.startsWith("#")) {
+      event.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <Link
       href={href}
       download={download}
       {...(download ? { target: "_blank" } : {})}
+      onClick={handleClick}
       className={cn(
         "group flex h-8 w-fit transform items-center justify-center gap-1 rounded-full px-3 text-xs font-medium transition-all duration-300 hover:border-transparent",
         theme === "bg"

@@ -16,7 +16,7 @@ export const ListMenu = () => {
       <LinkSosmed />
 
       <li className="border-l pl-2">
-        <LinkIcon href="/#contact" text="Contact Me">
+        <LinkIcon href="#contact" text="Contact Me">
           <MessageSquareText size={22} />
         </LinkIcon>
       </li>

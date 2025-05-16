@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-// import { Noto_Sans } from "next/font/google";
-// import { Roboto_Slab } from "next/font/google";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "../components/ui/tooltip";
@@ -15,6 +13,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Subhan Mohammad",
   description: "Let Work with me",
+  icons: "/logos.png",
 };
 
 export default function RootLayout({
