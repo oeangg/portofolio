@@ -1,7 +1,7 @@
 import React from "react";
 
-import { SubTitle } from "../../sub-title";
-import { CardProject } from "../../card";
+import { SubTitle } from "../subTitle";
+import { CardProject } from "../card";
 import { projectItems } from "@/src/data/project.item";
 
 export const ProjectSection = () => {

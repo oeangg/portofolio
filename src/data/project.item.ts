@@ -7,6 +7,7 @@ export const projectItems = [
       "My Portfolio Website - A showcase of my skills and projects, built with a modern technology stack for optimal performance and a sleek user experience. This website leverages the power of Next.js for server-side rendering and routing, the utility-first CSS framework Tailwind CSS for rapid and responsive styling, TypeScript for enhanced code maintainability, and Shadcn UI for beautifully designed, accessible components. Explore my work and get in touch!",
     tech: ["next", "tailwind"],
     linkRepo: "https://github.com/oeangg/portofolio",
+    liveSite: "https://oeangg.pages.dev/",
   },
   {
     linkVideo: "https://www.youtube.com/embed/p-VO-QS0PrE?si=GSf0HVd8fEDllpsM",
@@ -31,7 +32,7 @@ export const projectItems = [
     titleVideo: "Simple Book App",
     description:
       "Simple Book App: Managing Borrowed Books - This simple application provides a user-friendly way to keep track of borrowed books. Created as the capstone project for the Dicoding Indonesia Belajar Membuat Front-End Web untuk Pemula course, it demonstrates fundamental front-end development skills using HTML for structure, CSS for styling, and a bit of JavaScript for interactivity. All borrowing data is stored locally within the browser using localstorage.",
-    tech: ["html", "javascripts", "css "],
+    tech: ["html", "javascript", "css "],
     linkRepo: "https://github.com/oeangg/Simple-bookshelf-app",
   },
 ];

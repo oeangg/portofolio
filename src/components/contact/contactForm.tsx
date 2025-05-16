@@ -119,7 +119,7 @@ export const FormContact = (props: PropsEnv) => {
         )}
       </div>
 
-      <div className="flex w-full flex-col gap-1 md:w-2/3">
+      <div className="flex w-full flex-col gap-1 pb-2 md:w-2/3">
         <label htmlFor="" className="text-sm font-light text-foreground">
           MESSAGE
         </label>
@@ -138,10 +138,10 @@ export const FormContact = (props: PropsEnv) => {
       <button
         type="submit"
         disabled={loading}
-        className="rounded-2xl bg-accent-foreground/80 px-4 py-2 text-base font-normal tracking-tight text-secondary shadow-sm shadow-secondary transition-all duration-300 hover:border-transparent hover:bg-accent-foreground hover:shadow-lg hover:shadow-muted-foreground disabled:opacity-60"
+        className="flex w-fit transform items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-sm font-light text-background transition-all duration-300 hover:border-transparent hover:bg-primary/85 hover:shadow-lg hover:shadow-popover-foreground"
       >
         {loading ? (
-          <span className="animate-pulse">Sending Message...</span>
+          <span className="animate-pulse">Sending...</span>
         ) : (
           <span>Send Message</span>
         )}

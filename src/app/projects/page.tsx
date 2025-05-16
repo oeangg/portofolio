@@ -1,4 +1,4 @@
-import { SubTitle } from "@/src/components/sub-title";
+import { SubTitle } from "@/src/components/subTitle";
 import React from "react";
 
 export default function Home() {

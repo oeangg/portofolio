@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "../components/ui/tooltip";
-import { NavbarMenu } from "../components/navbar/header-index";
+import { NavbarMenu } from "../components/navbar/headerIndex";
 import { RetroGrid } from "../components/magicui/retro-grid";
 
 const fontSans = FontSans({
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={fontSans.className}>
         <section className="relative h-screen w-full">
           <RetroGrid opacity={0.3} />
-          <div className="mx-auto flex w-full max-w-3xl flex-col justify-center px-10 pt-5 sm:px-7 md:px-4 lg:px-0 lg:pt-20">
+          <div className="mx-auto flex w-full max-w-3xl flex-col justify-center px-10 pb-20 pt-10 sm:px-7 md:px-4 lg:px-0 lg:pb-28 lg:pt-20">
             <TooltipProvider delayDuration={0}>
               {children}
               <NavbarMenu />

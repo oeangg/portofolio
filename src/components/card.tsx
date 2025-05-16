@@ -8,6 +8,7 @@ import { SiPrisma, SiTailwindcss } from "react-icons/si";
 import { cn } from "../utils/cn";
 import Image from "next/image";
 import { IoLogoJavascript } from "react-icons/io";
+import { TechItem } from "./skills/techItem";
 
 interface IProjectItem {
   linkVideo?: string | null;
@@ -40,109 +41,131 @@ export const CardProject = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-between gap-5 rounded-lg border p-5 hover:shadow-md",
+        "flex w-full flex-col items-center justify-between gap-4 transition-shadow duration-300 hover:shadow-md md:h-[270px]",
         index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
       )}
     >
       {linkVideo && (
-        <iframe
-          height="200"
-          src={linkVideo}
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          className="w-full basis-1/3 overflow-hidden rounded-lg"
-        ></iframe>
+        <div className="relative h-full w-full basis-[200px] overflow-hidden">
+          <iframe
+            style={{ height: "100%", width: "100%" }}
+            src={linkVideo}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       )}
       {linkImage && (
-        <div
-          className="relative w-full basis-1/3 overflow-hidden rounded-lg"
-          style={{ height: "auto" }}
-        >
+        <div className="relative h-full w-full basis-[200px] overflow-hidden">
           <Image
             src={linkImage}
             alt={titleVideo}
-            width={500}
-            height={230}
-            style={{ width: "100%", height: "auto", objectFit: "cover" }} //
+            fill
+            sizes="200px"
+            style={{ objectFit: "cover" }} //
+            className="scale-100 transition-all duration-300 hover:scale-110"
           />
         </div>
       )}
-      <div className="basis-2/3 space-y-5">
+      <div className="flex-1 space-y-4 p-4">
         <h3 className="text-xl font-semibold tracking-tight">{titleVideo}</h3>
         <p className="text-sm text-secondary-foreground">{description}</p>
-        <div className="flex flex-row gap-2 text-xs font-light tracking-tight">
-          <div className="flex w-fit flex-row items-center gap-2 rounded-full bg-foreground px-3 py-2 text-primary-foreground/80 shadow-md">
-            <div className="flex flex-row gap-1">
-              {techIcon.map((icon, index) => {
-                if (icon.includes("next"))
-                  return (
-                    <RiNextjsFill
-                      size={15}
-                      key={index}
-                      className="inline-block"
-                    />
-                  );
-                if (icon.includes("tailwind"))
-                  return (
-                    <SiTailwindcss
-                      size={15}
-                      key={index}
-                      className="inline-block"
-                    />
-                  );
-                if (icon.includes("prisma"))
-                  return (
-                    <SiPrisma size={15} key={index} className="inline-block" />
-                  );
+        <div className="flex w-full flex-row items-center justify-between">
+          <div className="flex w-fit flex-row items-center gap-2">
+            {techIcon.map((icon, index) => {
+              if (icon.includes("next"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="Next JS"
+                    Icon={RiNextjsFill}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
+              if (icon.includes("tailwind"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="Tailwind CSS"
+                    Icon={SiTailwindcss}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
+              if (icon.includes("prisma"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="Prisma ORM"
+                    Icon={SiPrisma}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
 
-                if (icon.includes("html"))
-                  return (
-                    <FaHtml5 size={15} key={index} className="inline-block" />
-                  );
+              if (icon.includes("html"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="HTML"
+                    Icon={FaHtml5}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
 
-                if (icon.includes("javascripts"))
-                  return (
-                    <IoLogoJavascript
-                      size={15}
-                      key={index}
-                      className="inline-block"
-                    />
-                  );
-                if (icon.includes("css"))
-                  return (
-                    <FaCss3Alt size={15} key={index} className="inline-block" />
-                  );
-                return null;
-              })}
-            </div>
+              if (icon.includes("javascript"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="Javascipt"
+                    Icon={IoLogoJavascript}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
+              if (icon.includes("css"))
+                return (
+                  <TechItem
+                    key={index}
+                    text="CSS"
+                    Icon={FaCss3Alt}
+                    iconSize={20}
+                    size="sm"
+                  />
+                );
+              return null;
+            })}
           </div>
-
-          <Link
-            href={linkRepo}
-            target="_blank"
-            className="flex w-fit flex-row items-center gap-1 rounded-full bg-foreground px-3 py-2 tracking-tight text-primary-foreground/80 shadow-md duration-300 hover:bg-primary/90 hover:text-primary-foreground"
-          >
-            <FaGithub size={14} />
-            <h4>Repository</h4>
-          </Link>
-
-          {liveSite ? (
+          <div className="flex flex-row gap-2">
             <Link
-              href={liveSite}
+              href={linkRepo}
               target="_blank"
-              className="flex w-fit flex-row items-center gap-1 rounded-full bg-primary px-3 py-2 tracking-tight text-primary-foreground/80 shadow-md duration-300 hover:bg-primary/90 hover:text-primary-foreground"
+              className="flex h-7 w-fit flex-row items-center gap-1 rounded-full bg-foreground px-2 text-xs font-light tracking-tight text-primary-foreground/80 shadow-md duration-300 hover:bg-primary/90 hover:text-primary-foreground"
             >
-              <FiChrome size={14} />
-              <h4>Live Site</h4>
+              <FaGithub size={14} />
+              <h4>Repository</h4>
             </Link>
-          ) : (
-            <div className="flex w-fit cursor-not-allowed flex-row items-center gap-1 rounded-full border px-4 py-2 shadow-md">
-              <FiChrome size={14} />
-              <h4 className="text-foreground">Live Site</h4>
-            </div>
-          )}
+
+            {liveSite ? (
+              <Link
+                href={liveSite}
+                target="_blank"
+                className="flex h-7 w-fit flex-row items-center gap-1 rounded-full bg-primary px-2 text-xs font-light tracking-tight text-primary-foreground/80 shadow-md duration-300 hover:bg-primary/90 hover:text-primary-foreground"
+              >
+                <FiChrome size={14} />
+                <h4>Live Site</h4>
+              </Link>
+            ) : (
+              <div className="flex h-7 w-fit cursor-not-allowed flex-row items-center gap-1 rounded-full border px-2 text-xs font-light tracking-tight shadow-md">
+                <FiChrome size={14} />
+                <h4 className="text-foreground">Live Site</h4>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

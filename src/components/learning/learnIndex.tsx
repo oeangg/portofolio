@@ -1,5 +1,5 @@
 import React from "react";
-import { SubTitle } from "../../sub-title";
+import { SubTitle } from "../subTitle";
 
 export const LearnSection = () => {
   return (

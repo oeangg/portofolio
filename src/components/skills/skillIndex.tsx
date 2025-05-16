@@ -1,7 +1,7 @@
 import React from "react";
-import { SubTitle } from "../../sub-title";
+import { SubTitle } from "../subTitle";
 
-import { TechList } from "./skill-list";
+import { TechList } from "./techList";
 
 export const TechStackSection = () => {
   return (

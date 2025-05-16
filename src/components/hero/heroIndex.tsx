@@ -1,7 +1,7 @@
 import React from "react";
-import { HeroImage } from "./hero-image";
+import { HeroImage } from "./heroImage";
 
-import { LinkSosmed } from "./link-sosmed";
+import { LinkSosmed } from "./linkSosmed";
 
 export const IntroSection = () => {
   return (

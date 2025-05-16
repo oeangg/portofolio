@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MdOutlineArrowOutward } from "react-icons/md";
-import { LinkButton } from "../../link-button";
+import { LinkButton } from "../linkButton";
 
 export const LinkCTA = () => {
   return (

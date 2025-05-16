@@ -7,6 +7,9 @@
   --secondary: #f5f5f5;
   --third: #fff6da;
 } */
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   h1 {

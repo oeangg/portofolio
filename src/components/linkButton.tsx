@@ -24,10 +24,10 @@ export const LinkButton = ({
       download={download}
       {...(download ? { target: "_blank" } : {})}
       className={cn(
-        "group flex h-8 w-fit transform items-center justify-center gap-1 rounded-full px-3 text-xs font-light transition-colors duration-300 hover:border-transparent",
+        "group flex h-8 w-fit transform items-center justify-center gap-1 rounded-full px-3 text-xs font-medium transition-all duration-300 hover:border-transparent",
         theme === "bg"
-          ? "bg-primary text-background hover:bg-secondary hover:text-primary hover:shadow-lg hover:shadow-popover-foreground"
-          : "h border border-primary bg-transparent text-primary hover:bg-primary hover:text-background hover:shadow-lg hover:shadow-popover-foreground",
+          ? "bg-primary text-background hover:bg-primary/85 hover:shadow-lg hover:shadow-popover-foreground"
+          : "h border border-primary bg-transparent text-primary hover:bg-primary/85 hover:text-background hover:shadow-lg hover:shadow-popover-foreground",
       )}
     >
       {text} <Icon size={16} className="duration-300 group-hover:scale-125" />

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { SubTitle } from "../sub-title";
-import { LinkCTA } from "../homepage/hero/link-cta";
+import { SubTitle } from "../subTitle";
+import { LinkCTA } from "../hero/linkCta";
 
 export const AboutSection = () => {
   return (
@@ -9,9 +9,9 @@ export const AboutSection = () => {
       <SubTitle title="About Me" />
       <div className="space-y-3">
         <p className="text-sm leading-5">
-          Hello, I&apos;m Mohammad Subhan!, just call me{" "}
-          <span className="font-bold">Subhan!</span>. After nearly seven years
-          as a Borland Delphi programmer, I embarked on an exciting journey into
+          Hello, I&apos;m Mohammad Subhan, just call me{" "}
+          <span className="font-bold">Subhan</span>. After nearly seven years as
+          a Borland Delphi programmer, I embarked on an exciting journey into
           web development in mid-2024. This path has involved self-study via
           Youtube{" "}
           <Link
